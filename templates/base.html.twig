@@ -12,22 +12,13 @@
         {% endblock %}
     </head>
     <body class="d-flex flex-column">
-    <nav class="navbar navbar-dark bg-primary px-5">
-        <a class="navbar-brand" href="#">Blog</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Features</a>
-                <a class="nav-item nav-link" href="#">Pricing</a>
-                <a class="nav-item nav-link disabled" href="#">Disabled</a>
-            </div>
-        </div>
-    </nav>
-        {% block body %}
+        <nav class="navbar navbar-dark bg-primary px-5">
+            <a class="navbar-brand" href="#">Blog</a>
+        </nav>
 
-        {% endblock %}
+        <div class="container my-3">
+            {% block mainContent %}
+            {% endblock %}
+        </div>
     </body>
 </html>

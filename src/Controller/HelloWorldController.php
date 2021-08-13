@@ -15,7 +15,7 @@ class HelloWorldController extends AbstractController
      */
     public function index(): Response
     {
-        $sortedUsers = $this->getSortedUsers();
+        $sortedUsers = $this->getSortedUsers($this->getUsers());
 
         $number = rand(1, 100);
 
@@ -25,11 +25,9 @@ class HelloWorldController extends AbstractController
         ]);
     }
 
-    private function getSortedUsers(): array
+    private function getSortedUsers($sortedUsers): array
     {
-        $sortedUsers = $this->getUsers();
-
-        uksort($sortedUsers, function (string $a, string $b): int {
+        uasort($sortedUsers, function (string $a, string $b): int {
             return $a <=> $b;
         });
 
@@ -42,6 +40,9 @@ class HelloWorldController extends AbstractController
             'John',
             'Joe',
             'Alan',
+            'Bradley',
+            'Zack',
+            'Paul',
             'Frank',
             'Mark'
         ];
